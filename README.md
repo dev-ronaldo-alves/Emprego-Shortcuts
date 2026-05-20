@@ -4,9 +4,6 @@ Aplicação web rápida e organizada que reúne **mais de 60 sites de emprego na
 
 Desenvolvida em HTML/CSS/JS puro, sem dependências externas pesadas, funcionando como um **dashboard de atalhos** com pesquisa dinâmica e categorias visuais.
 
-![preview](https://via.placeholder.com/800x400?text=Emprego+Espanha+Shortcuts)  
-*(substitua por um screenshot real se desejar)*
-
 ---
 
 ## 🚀 Funcionalidades
