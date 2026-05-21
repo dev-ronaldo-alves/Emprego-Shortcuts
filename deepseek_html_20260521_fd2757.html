@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#0f172a">
+    <title>Emprego Espanha · Atalhos para todos os portais</title>
+    <!-- Favicon emoji (💼) -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E💼%3C/text%3E%3C/svg%3E">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f1f5f9;
+            font-family: 'Inter', sans-serif;
+            color: #0f172a;
+            line-height: 1.5;
+            padding: 2rem 1.5rem;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* header */
+        .header {
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .badge {
+            background: #d9f99d;
+            color: #3a6211;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.25rem 0.75rem;
+            border-radius: 40px;
+            display: inline-block;
+            margin-bottom: 1rem;
+            letter-spacing: 0.3px;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #0f2b3d, #1e4b6e);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            letter-spacing: -0.3px;
+        }
+
+        .sub {
+            color: #334155;
+            margin-top: 0.5rem;
+            font-weight: 500;
+            border-bottom: 1px solid #cbd5e1;
+            display: inline-block;
+            padding-bottom: 0.25rem;
+        }
+
+        /* search & stats */
+        .toolbar {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 0.75rem 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            border: 1px solid #e2e8f0;
+        }
+
+        .search-wrapper {
+            flex: 2;
+            min-width: 220px;
+            display: flex;
+            align-items: center;
+            background: #f8fafc;
+            border-radius: 2rem;
+            padding: 0.4rem 1rem;
+            border: 1px solid #e2edf2;
+            transition: all 0.2s;
+        }
+        .search-wrapper:focus-within {
+            border-color: #3b82f6;
+            background: white;
+            box-shadow: 0 0 0 2px rgba(59,130,246,0.2);
+        }
+        .search-wrapper i {
+            color: #94a3b8;
+            margin-right: 0.6rem;
+            font-size: 1rem;
+        }
+        #searchInput {
+            border: none;
+            background: transparent;
+            width: 100%;
+            font-size: 0.95rem;
+            padding: 0.6rem 0;
+            outline: none;
+            font-weight: 500;
+        }
+        .stats {
+            background: #eef2ff;
+            padding: 0.4rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #1e40af;
+        }
+        .reset-btn {
+            background: transparent;
+            border: 1px solid #cbd5e1;
+            border-radius: 2rem;
+            padding: 0.4rem 1rem;
+            font-weight: 500;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: 0.2s;
+            color: #334155;
+        }
+        .reset-btn:hover {
+            background: #f1f5f9;
+            border-color: #94a3b8;
+        }
+        .total-badge {
+            background: #e2e8f0;
+            padding: 0.25rem 0.75rem;
+            border-radius: 2rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        /* category sections */
+        .category-section {
+            margin-bottom: 2.5rem;
+            background: white;
+            border-radius: 1.5rem;
+            padding: 1.25rem 1.5rem 1.5rem 1.5rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+            border: 1px solid #e9eef3;
+            transition: all 0.2s;
+        }
+        .category-title {
+            display: flex;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.2rem;
+            border-left: 5px solid #3b82f6;
+            padding-left: 1rem;
+        }
+        .category-title h2 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            letter-spacing: -0.2px;
+        }
+        .category-count {
+            font-size: 0.75rem;
+            background: #e2e8f0;
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            font-weight: 600;
+            color: #2d3a4b;
+        }
+
+        /* grid cards */
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 0.9rem;
+        }
+        .card-link {
+            text-decoration: none;
+            background: #ffffff;
+            border-radius: 1rem;
+            border: 1px solid #eef2f8;
+            padding: 0.9rem 1rem;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+        }
+        .card-link:hover {
+            transform: translateY(-2px);
+            border-color: #cbdff2;
+            background: #fefefe;
+            box-shadow: 0 12px 20px -12px rgba(0,0,0,0.12);
+        }
+        .icon-circle {
+            width: 40px;
+            height: 40px;
+            background: #eef2ff;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #2563eb;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        .card-content {
+            flex: 1;
+            overflow: hidden;
+        }
+        .site-name {
+            font-weight: 700;
+            font-size: 1rem;
+            color: #0f172a;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            flex-wrap: wrap;
+        }
+        .site-desc {
+            font-size: 0.7rem;
+            color: #5b6e8c;
+            margin-top: 0.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .external-icon {
+            font-size: 0.7rem;
+            color: #8193b0;
+            margin-left: 0.2rem;
+        }
+        .badge-cat-tag {
+            font-size: 0.6rem;
+            background: #f1f5f9;
+            padding: 0.2rem 0.45rem;
+            border-radius: 30px;
+            color: #475569;
+            white-space: nowrap;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 2rem;
+            color: #475569;
+            margin-top: 1rem;
+            font-weight: 500;
+        }
+
+        footer {
+            margin-top: 3rem;
+            text-align: center;
+            font-size: 0.75rem;
+            color: #5b6e8c;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 1.8rem;
+        }
+
+        @media (max-width: 640px) {
+            body {
+                padding: 1rem;
+            }
+            .category-section {
+                padding: 1rem;
+            }
+            .links-grid {
+                grid-template-columns: 1fr;
+            }
+            .toolbar {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .stats {
+                align-self: flex-start;
+            }
+        }
+        .hidden-category {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <span class="badge"><i class="fas fa-briefcase"></i> 60+ portais · Emprego na Espanha</span>
+        <h1><i class="fas fa-rocket"></i> Emprego Shortcuts</h1>
+        <div class="sub">todos os sites oficiais, setoriais e gerais num só lugar</div>
+    </div>
+
+    <div class="toolbar">
+        <div class="search-wrapper">
+            <i class="fas fa-search"></i>
+            <input type="text" id="searchInput" placeholder="Filtrar por nome, setor ou categoria... ex: TI, Turismo, Jurídico" autocomplete="off">
+        </div>
+        <div class="stats">
+            <span id="visibleCount">0</span> / <span id="totalCount">0</span> atalhos
+        </div>
+        <button class="reset-btn" id="resetSearchBtn"><i class="fas fa-undo-alt"></i> Limpar filtro</button>
+    </div>
+
+    <div id="categoriesContainer"></div>
+    <footer>
+        <i class="fas fa-external-link-alt"></i> Clique em qualquer card para abrir o site em nova aba · 
+        <strong>atalhos diretos para todos os links da sua lista</strong>
+    </footer>
+</div>
+
+<script>
+    // --------------------------------------------------------------
+    // Dados completos extraídos do ficheiro: lista_sites_emprego_espanha.txt
+    // 60 entradas, categorias originais + subcategorias (preservando duplicata do Turijobs)
+    // --------------------------------------------------------------
+    const sitesData = [
+        // --- Portais Gerais e Populares (1-14)
+        { name: "InfoJobs", url: "https://www.infojobs.net/", category: "Portais Gerais e Populares", note: "geral" },
+        { name: "Infoempleo", url: "https://www.infoempleo.com/", category: "Portais Gerais e Populares", note: "geral" },
+        { name: "Indeed España", url: "https://es.indeed.com/", category: "Portais Gerais e Populares", note: "agregador" },
+        { name: "LinkedIn España", url: "https://www.linkedin.com/jobs/", category: "Portais Gerais e Populares", note: "rede profissional" },
+        { name: "Jobandtalent", url: "https://www.jobandtalent.com/es", category: "Portais Gerais e Populares", note: "trabalho temporário" },
+        { name: "Jobatus", url: "https://www.jobatus.es/", category: "Portais Gerais e Populares", note: "motor de busca" },
+        { name: "Page Personnel", url: "https://www.pagepersonnel.es/", category: "Portais Gerais e Populares", note: "recrutamento" },
+        { name: "Laboris", url: "http://www.laboris.net/", category: "Portais Gerais e Populares", note: "emprego geral" },
+        { name: "Monster España", url: "http://www.monster.es/", category: "Portais Gerais e Populares", note: "internacional" },
+        { name: "Insertia.net", url: "http://www.insertia.net/empleo/", category: "Portais Gerais e Populares", note: "multissetorial" },
+        { name: "Jooble España", url: "https://es.jooble.org/", category: "Portais Gerais e Populares", note: "agregador" },
+        { name: "Turijobs (Turismo e Hotelaria)", url: "https://www.turijobs.com/", category: "Portais Gerais e Populares", note: "Turismo/Hotelaria" },
+        { name: "Tecnoempleo (TI e Telecom)", url: "https://www.tecnoempleo.com/", category: "Portais Gerais e Populares", note: "TI & Telecom" },
+        { name: "Ticjob (TI)", url: "http://www.ticjob.es/", category: "Portais Gerais e Populares", note: "Tecnologia" },
+        // --- Jurídico
+        { name: "Iuris Talent", url: "http://www.iuristalent.com/", category: "Jurídico", note: "advocacia/legal" },
+        { name: "Iterlegis", url: "http://www.iterlegis.es/es", category: "Jurídico", note: "emprego legal" },
+        { name: "ICAB (Bolsa de Trabajo)", url: "https://www.icab.es/es/colegio/servicio-de-empleo-y-orientacion-profesional-soop/bolsa-de-trabajo-icab/", category: "Jurídico", note: "colegio advogados" },
+        // --- Agrário e Pecuária
+        { name: "Infocarne", url: "http://infocarne.com/empleo/", category: "Agrário e Pecuária", note: "setor cárneo" },
+        { name: "Infoagro", url: "http://www.infoagro.com/empleo/", category: "Agrário e Pecuária", note: "agropecuária" },
+        { name: "El Campo no para", url: "https://elcamponopara.org/", category: "Agrário e Pecuária", note: "campo/agro" },
+        // --- Criativo e Audiovisual
+        { name: "Domestika Jobs", url: "https://www.domestika.org/es/jobs", category: "Criativo e Audiovisual", note: "design, criativo" },
+        { name: "Platino Empleo", url: "https://www.platinoempleo.com/default.aspx", category: "Criativo e Audiovisual", note: "audiovisual" },
+        // --- Alta Direção
+        { name: "Catenon", url: "https://www.catenon.com/", category: "Alta Direção", note: "executivos" },
+        { name: "Signium", url: "http://www.signium.es/", category: "Alta Direção", note: "headhunting" },
+        { name: "Servitalent", url: "https://www.servitalent.com/", category: "Alta Direção", note: "talentos senior" },
+        { name: "Michael Page", url: "https://www.michaelpage.es/seleccion-personal", category: "Alta Direção", note: "seleção gerencial" },
+        { name: "Experteer", url: "https://www.experteer.es/", category: "Alta Direção", note: "cargos altos" },
+        // --- Construção
+        { name: "Archijobs", url: "https://jobs.architect.be/", category: "Construção", note: "arquitetura" },
+        { name: "Construfy", url: "https://www.construfy.com/", category: "Construção", note: "construção civil" },
+        { name: "Construyendo Empleo", url: "http://www.construyendoempleo.com", category: "Construção", note: "emprego construção" },
+        // --- Educação
+        { name: "Educajob", url: "https://www.educajob.com/", category: "Educação", note: "ensino" },
+        { name: "Colejobs", url: "http://www.colejobs.es/", category: "Educação", note: "colégios" },
+        { name: "Educaspain", url: "http://educaspain.com/empleo/", category: "Educação", note: "educação Espanha" },
+        { name: "Wekab", url: "http://www.wekab.com", category: "Educação", note: "formação" },
+        // --- Farmacêutico e Saúde
+        { name: "Farmacias Jobs", url: "https://farmacias.jobs/", category: "Farmacêutico e Saúde", note: "farmácias" },
+        { name: "Pmfarma", url: "https://www.pmfarma.es/empleo/", category: "Farmacêutico e Saúde", note: "indústria farmacêutica" },
+        { name: "Farmatalent", url: "https://www.farmatalent.com/vacantes", category: "Farmacêutico e Saúde", note: "talento farma" },
+        // --- Engenharia
+        { name: "Buscoingenieros", url: "http://buscoingenieros.es/empleo/", category: "Engenharia", note: "engenheiros" },
+        { name: "Ingenierojob", url: "https://www.ingenierojob.com/ofertas", category: "Engenharia", note: "engenharia geral" },
+        { name: "Proempleoingenieros", url: "https://www.proempleoingenieros.es/bolsa_trabajo.aspx", category: "Engenharia", note: "bolsa engenheiros" },
+        // --- Portais Governamentais e Oficiais
+        { name: "Empléate (Governo da Espanha)", url: "https://www.empleate.gob.es/empleo/", category: "Portais Governamentais", note: "serviço público" },
+        { name: "Sistema Nacional de Empleo", url: "https://www.sistemanacionalempleo.es/", category: "Portais Governamentais", note: "oficial" },
+        { name: "EURES España", url: "https://europa.eu/eures/portal/jv-se/search?locationCodes=es", category: "Portais Governamentais", note: "mobilidade europeia" },
+        // --- Marketing e Digital
+        { name: "Dimajobs", url: "https://www.dimajobs.com/", category: "Marketing e Digital", note: "marketing digital" },
+        { name: "Ecomandjobs", url: "http://www.ecomandjobs.com/", category: "Marketing e Digital", note: "ecommerce" },
+        { name: "Marketing Directo (Bolsa de Empleo)", url: "https://www.marketingdirecto.com/empleo", category: "Marketing e Digital", note: "marketing" },
+        // --- Moda e Luxo
+        { name: "Luxe Talent", url: "http://www.luxetalent.es/", category: "Moda e Luxo", note: "luxo & moda" },
+        { name: "Fashion United", url: "https://fashionunited.es/bolsa-de-trabajo-en-moda/", category: "Moda e Luxo", note: "moda internacional" },
+        { name: "Fashionjobs", url: "http://es.fashionjobs.com/", category: "Moda e Luxo", note: "emprego moda" },
+        { name: "Youareunicorn", url: "http://youareunicorn.com/", category: "Moda e Luxo", note: "startups de moda" },
+        // --- Meio Ambiente
+        { name: "Comunidad ISM (Empleo Ambiental)", url: "https://www.comunidadism.es/empleo/", category: "Meio Ambiente", note: "sustentabilidade" },
+        { name: "CienciasAmbientales.com", url: "https://www.cienciasambientales.com/es/empleo/", category: "Meio Ambiente", note: "ambiental" },
+        { name: "Enviroo", url: "https://enviroo.com/", category: "Meio Ambiente", note: "empregos verdes" },
+        { name: "Ambientum", url: "http://www.ambientum.com/empleo/", category: "Meio Ambiente", note: "ambiente/energia" },
+        // --- Trabalho Remoto
+        { name: "Remotive", url: "https://remotive.com/", category: "Trabalho Remoto", note: "remoto mundial (filtro Espanha)" },
+        { name: "We Work Remotely", url: "https://weworkremotely.com/", category: "Trabalho Remoto", note: "remoto global" },
+        { name: "Workana", url: "https://www.workana.com/", category: "Trabalho Remoto", note: "freelance" },
+        // --- Outros Setores Específicos (com Turijobs duplicado e demais)
+        { name: "Turijobs (Turismo)", url: "https://www.turijobs.com/", category: "Outros Setores Específicos", note: "turismo (duplicado da lista original)" },
+        { name: "Hosteleo (Hotelaria e Restauração)", url: "https://www.hosteleo.com/es/", category: "Outros Setores Específicos", note: "hotelaria/restauração" },
+        { name: "Trovit Empleo (Agregador)", url: "https://empleo.trovit.es/", category: "Outros Setores Específicos", note: "agregador de ofertas" }
+    ];
+
+    // Categorias únicas e ordenação (mantendo ordem lógica)
+    const categoryOrder = [
+        "Portais Gerais e Populares", "Jurídico", "Agrário e Pecuária", "Criativo e Audiovisual", "Alta Direção",
+        "Construção", "Educação", "Farmacêutico e Saúde", "Engenharia", "Portais Governamentais",
+        "Marketing e Digital", "Moda e Luxo", "Meio Ambiente", "Trabalho Remoto", "Outros Setores Específicos"
+    ];
+
+    // Agrupar dados por categoria
+    function groupByCategory(data) {
+        const map = new Map();
+        categoryOrder.forEach(cat => map.set(cat, []));
+        data.forEach(site => {
+            const cat = site.category;
+            if (map.has(cat)) {
+                map.get(cat).push(site);
+            } else {
+                // fallback caso alguma categoria não esteja na ordem (não ocorrerá)
+                map.set(cat, [site]);
+            }
+        });
+        return map;
+    }
+
+    let currentFilter = "";
+
+    // Render dinâmico com filtro
+    function renderApp() {
+        const searchTerm = currentFilter.trim().toLowerCase();
+        const groups = groupByCategory(sitesData);
+        const container = document.getElementById("categoriesContainer");
+        if (!container) return;
+
+        let totalVisible = 0;
+        let html = "";
+
+        for (const category of categoryOrder) {
+            const sitesInCat = groups.get(category) || [];
+            if (sitesInCat.length === 0) continue;
+
+            // filtra sites dentro da categoria
+            let filteredSites = sitesInCat;
+            if (searchTerm) {
+                filteredSites = sitesInCat.filter(site => 
+                    site.name.toLowerCase().includes(searchTerm) || 
+                    site.category.toLowerCase().includes(searchTerm) ||
+                    (site.note && site.note.toLowerCase().includes(searchTerm)) ||
+                    site.url.toLowerCase().includes(searchTerm)
+                );
+            }
+
+            if (filteredSites.length === 0) continue; // categoria vazia oculta
+
+            totalVisible += filteredSites.length;
+
+            // monta grid
+            let cardsHtml = "";
+            for (const site of filteredSites) {
+                // nome exibido: se tem nota especial pode exibir junto, mas já temos name completo
+                let displayName = site.name;
+                // pequeno detalhe para indicar setor se hover
+                const extraHint = site.note ? site.note : "";
+                cardsHtml += `
+                    <a href="${site.url}" target="_blank" rel="noopener noreferrer" class="card-link">
+                        <div class="icon-circle">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div class="card-content">
+                            <div class="site-name">
+                                ${escapeHtml(displayName)}
+                                <i class="fas fa-external-link-alt external-icon"></i>
+                            </div>
+                            <div class="site-desc">
+                                <span class="badge-cat-tag"><i class="fas fa-tag"></i> ${escapeHtml(category)}</span>
+                                ${extraHint ? `<span class="badge-cat-tag"><i class="fas fa-info-circle"></i> ${escapeHtml(extraHint.substring(0, 30))}</span>` : ''}
+                            </div>
+                        </div>
+                    </a>
+                `;
+            }
+
+            html += `
+                <div class="category-section" data-category="${category.replace(/\s/g, '')}">
+                    <div class="category-title">
+                        <h2><i class="fas fa-folder-open"></i> ${escapeHtml(category)}</h2>
+                        <span class="category-count">${filteredSites.length} portal(ais)</span>
+                    </div>
+                    <div class="links-grid">
+                        ${cardsHtml}
+                    </div>
+                </div>
+            `;
+        }
+
+        if (totalVisible === 0) {
+            html = `<div class="no-results"><i class="fas fa-search-minus"></i> Nenhum atalho encontrado para “${escapeHtml(searchTerm)}”.<br> Tente outra palavra ou <button id="inlineResetBtn" style="background:none; border:none; color:#2563eb; cursor:pointer; font-weight:600;">limpar filtro</button>.</div>`;
+        }
+
+        container.innerHTML = html;
+        document.getElementById("visibleCount").innerText = totalVisible;
+        document.getElementById("totalCount").innerText = sitesData.length;
+
+        // event listener para reset inline quando não há resultados
+        const inlineBtn = document.getElementById("inlineResetBtn");
+        if (inlineBtn) {
+            inlineBtn.addEventListener("click", () => {
+                document.getElementById("searchInput").value = "";
+                currentFilter = "";
+                renderApp();
+            });
+        }
+    }
+
+    // small escape
+    function escapeHtml(str) {
+        if (!str) return '';
+        return str.replace(/[&<>]/g, function(m) {
+            if (m === '&') return '&amp;';
+            if (m === '<') return '&lt;';
+            if (m === '>') return '&gt;';
+            return m;
+        }).replace(/[\uD800-\uDBFF][\uDC00-\uDFFF]/g, function(c) {
+            return c;
+        });
+    }
+
+    // inicializar eventos e render
+    function init() {
+        renderApp();
+
+        const searchInput = document.getElementById("searchInput");
+        const resetBtn = document.getElementById("resetSearchBtn");
+
+        searchInput.addEventListener("input", (e) => {
+            currentFilter = e.target.value;
+            renderApp();
+        });
+
+        resetBtn.addEventListener("click", () => {
+            searchInput.value = "";
+            currentFilter = "";
+            renderApp();
+        });
+    }
+
+    init();
+</script>
+</body>
+</html>
